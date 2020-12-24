@@ -77,5 +77,16 @@ namespace Sharpdown
             if (this.OpenFiles.Count == 0)
                 this.CreateNewFile();
         }
+
+        private void OpenMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "markdown(*.md)|*.md";
+           if(ofd.ShowDialog() == DialogResult.OK);
+            {
+                OpenFile(ofd.FileName);
+            }
+                
+        }
     }
 }
